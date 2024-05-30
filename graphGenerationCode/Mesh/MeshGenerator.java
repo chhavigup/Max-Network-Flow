@@ -128,11 +128,11 @@ public class MeshGenerator {
   public MeshGenerator(String[] args) {
     rand = new Random();
     // the constant capacity flag
-    if (args.length == 5 && args[4].equals("-cc")) {
+    if (args.length == 5 && "-cc".equals(args[4])) {
       constCap = true;
     }
     // where to write the output
-    if (args.length >= 4 && !args[3].equals("-cc")) {
+    if (args.length >= 4 && !"-cc".equals(args[3])) {
       try {
         out = new PrintStream(args[3]);
       } catch (FileNotFoundException e) {
@@ -141,7 +141,7 @@ public class MeshGenerator {
     } else {
       out = System.out;
     }
-    if (args.length == 4 && args[3].equals("-cc")) {
+    if (args.length == 4 && "-cc".equals(args[3])) {
       constCap = true;
     }
     // set the capacity, it defaults to 1.
