@@ -4,6 +4,7 @@
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.security.SecureRandom;
 import java.util.*;
 
 public class RandomGraph {
@@ -59,7 +60,7 @@ public class RandomGraph {
 		int head;
 		int c;
 		SortedSet s;
-		Random gen = new Random();
+		Random gen = new SecureRandom();
 		StringBuffer bfr = new StringBuffer();
 		
 		//Add distinguished node s
