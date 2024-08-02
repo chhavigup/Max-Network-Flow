@@ -4,6 +4,7 @@
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.nio.file.Files;
 import java.util.*;
 
 public class RandomGraph {
@@ -114,7 +115,7 @@ public class RandomGraph {
 	 */
 	private static void toFile(StringBuffer outString, String filename){
 		try{
-			BufferedWriter fout = new BufferedWriter(new FileWriter(filename));
+			BufferedWriter fout = Files.newBufferedWriter(filename.toPath());
 			fout.write(outString.toString());
 			fout.close();
 		}catch(Exception e){
