@@ -7,6 +7,7 @@
  */
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
+import java.security.SecureRandom;
 import java.util.Random;
 
 /**
@@ -126,7 +127,7 @@ public class MeshGenerator {
    *          the command line arguments. See class comment.
    */
   public MeshGenerator(String[] args) {
-    rand = new Random();
+    rand = new SecureRandom();
     // the constant capacity flag
     if (args.length == 5 && args[4].equals("-cc")) {
       constCap = true;
