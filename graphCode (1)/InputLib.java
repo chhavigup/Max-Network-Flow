@@ -1,5 +1,6 @@
 // Figures A.5-A.6
 
+import io.github.pixee.security.BoundedLineReader;
 import java.io.*;
 import java.util.*;
 
@@ -50,7 +51,7 @@ class InputLib {
     public static String getLine(BufferedReader inbuf) {
         String line;
         try {
-            line = inbuf.readLine();
+            line = BoundedLineReader.readLine(inbuf, 5_000_000);
         }
         catch (java.io.IOException e) {
             throw new InputError(e.getMessage());
