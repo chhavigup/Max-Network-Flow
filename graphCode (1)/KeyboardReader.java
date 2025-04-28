@@ -1,3 +1,4 @@
+import io.github.pixee.security.BoundedLineReader;
 import java.io.*;
 
 /** 
@@ -86,7 +87,7 @@ public class KeyboardReader {
    public static int readInt() {
       String s = "";
       try {
-         s = reader.readLine();
+         s = BoundedLineReader.readLine(reader, 5_000_000);
       } catch(IOException e) {
          if (ERROR_MESSAGES)
             System.out.println("IO error: " + e);
@@ -116,7 +117,7 @@ public class KeyboardReader {
    public static double readDouble() {
       String s = "";
       try {
-         s = reader.readLine();
+         s = BoundedLineReader.readLine(reader, 5_000_000);
       } catch(IOException e) {
          if (ERROR_MESSAGES)
             System.out.println("IO error: " + e);
@@ -146,7 +147,7 @@ public class KeyboardReader {
    public static String readString() {
       String s = "";
       try {
-         s = reader.readLine();
+         s = BoundedLineReader.readLine(reader, 5_000_000);
       } catch(IOException e) {
          if (ERROR_MESSAGES)
             System.out.println("IO error: " + e);
