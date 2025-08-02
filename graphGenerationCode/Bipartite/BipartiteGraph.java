@@ -1,3 +1,4 @@
+import io.github.pixee.security.BoundedLineReader;
 import java.io.*;
 import java.util.*;
 
@@ -95,7 +96,7 @@ public class BipartiteGraph
 	{
 		BufferedReader stringIn = new BufferedReader (new
 			InputStreamReader(System.in));
-		return  stringIn.readLine();
+		return  BoundedLineReader.readLine(stringIn, 5_000_000);
 	}
 
 	public static int GetInt() throws IOException 
